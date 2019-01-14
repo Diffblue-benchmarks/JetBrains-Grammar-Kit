@@ -1,0 +1,21 @@
+testCmd: mvn test
+cbmcArguments:
+  depth: false
+  java-max-vla-length: false
+phases:
+-
+  timeout: 300
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    unwind: 1
+-
+  timeout: 300
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 100
+    unwind: 2
+-
+  timeout: 300
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    unwind: 3
